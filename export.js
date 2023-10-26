@@ -1,6 +1,6 @@
 const admin = require("firebase-admin");
 const fs = require("fs");
-const serviceAccount = require("./config/agriyara/agriyara-7d572-firebase-adminsdk-2je4t-e274f6f7cb.json");
+const serviceAccount = require("./config/yara-224ff-firebase-adminsdk-mnfwm-750ae1d062.json");
 
 let collectionName = process.argv[2];
 let subCollection = process.argv[3];
@@ -8,7 +8,7 @@ let subCollection = process.argv[3];
 // You should replace databaseURL with your own
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://agriyara-7d572-default-rtdb.firebaseio.com/", // put your database rtdb link here
+  databaseURL: "https://yara-224ff-default-rtdb.firebaseio.com", // put your database rtdb link here
 });
 
 let db = admin.firestore();
@@ -33,7 +33,7 @@ let results = db
 results.then((dt) => {
   getSubCollection(dt).then(() => {
     // Write collection to JSON file
-    fs.writeFile("vendors.json", JSON.stringify(data), function (err) {
+    fs.writeFile("users.json", JSON.stringify(data), function (err) {
       // replace table name here
       if (err) {
         return console.log(err);

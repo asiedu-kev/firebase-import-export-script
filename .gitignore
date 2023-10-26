@@ -2,3 +2,5 @@ node_modules
 serviceAccountKey.json
 firestore-export.json
 package-lock.json
+/config/yara-224ff-firebase-adminsdk-mnfwm-750ae1d062.json
+users.json
